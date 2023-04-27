@@ -150,7 +150,13 @@ a{
         height: 1px;
         overflow: hidden;
     }
-
+        .table>thead>tr>td{
+            vertical-align: inherit !important;
+            border-top: 0px !important;
+        }
+    td{
+        border: 0px !important;
+    }
 }
 
 .prev-user__title{
