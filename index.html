@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <main>
+      <section class="info">
+        <div class="info__container">
+          <ul class="info__list">
+            <li class="info__list-item info__user-icon">
+              <img class="user-avatar" src="/img/photo.jpg" alt="user-img" />
+            </li>
+            <li class="info__list-item">
+              <h2 class="info__user-name user-name"></h2>
+            </li>
+            <li class="info__list-item">
+              <a class="user-email list" href="mailto:"></a>
+            </li>
+            <li class="info__list-item">
+              <a class="user-phone list" href="tel:"></a>
+            </li>
+          </ul>
+          <ul class="info__btn-list">
+            <li class="info__btn-item">
+              <button
+                type="button"
+                class="my-btn"
+                data-toggle="modal"
+                data-target="#myModal2"
+              >
+                Generate User
+              </button>
+            </li>
+            <li class="info__btn-item">
+              <button
+                type="button"
+                class="my-btn"
+                data-toggle="modal"
+                data-target="#myModal1"
+              >
+                Create User
+              </button>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="prev-user">
+        <div class="prev-user__container">
+          <h2 class="prev-user__title">Table of previously created users</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Аvatar</th>
+                <th>Name Surname</th>
+                <th>Email</th>
+                <th>Number</th>
+                <th>Detail</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </section>
+    </main>
+    <!-- Modal Generate-->
+    <div
+      class="modal fade generator-modal"
+      id="myModal2"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Select</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <select class="gender-select">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="my-btn" data-dismiss="modal">
+              Close
+            </button>
+            <button type="button" id="generate-user-btn" class="my-btn">
+              Generate User
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Create-->
+    <div
+      class="modal fade create-modal"
+      id="myModal1"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Fill out the form</h4>
+          </div>
+          <div class="modal-body">
+            <form id="user-form">
+              <div class="form-group">
+                <label for="photo">Avatar:</label>
+                <input type="file" id="photo" />
+              </div>
+              <div class="form-group">
+                <label for="first-name">Name:</label>
+                <input type="text" class="form-control" id="name" required />
+              </div>
+              <div class="form-group">
+                <label for="last-name">Surname:</label>
+                <input type="text" class="form-control" id="surname" required />
+              </div>
+              <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" class="form-control" id="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone:</label>
+                <input type="tel" class="form-control" id="phone" required />
+              </div>
+              <div class="form-group">
+                <label>Gender:</label>
+                <div class="radio">
+                  <label>
+                    <input
+                      type="radio"
+                      name="gender"
+                      value="male"
+                      checked
+                      required
+                    />
+                    Male
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="gender" value="female" required />
+                    Female
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="address">Residential address:</label>
+                <textarea class="form-control" id="address" required></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="my-btn" data-dismiss="modal">
+              Close
+            </button>
+            <button type="button" id="create-user-btn" class="my-btn">
+              Create User
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal Details -->
+    <div
+      class="modal fade details-modal"
+      id="myModal3"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="myModalLabel">Details User</h4>
+          </div>
+          <div class="modal-body details-body">
+            <div class="info__user-icon">
+              <img class="user-avatar-details" src="" alt="" />
+            </div>
+            <div class="user-info">
+              <h2 class="user-name-details"></h2>
+              <p>Email: <a class="user-email-details" href=""></a></p>
+              <p>Phone: <a class="user-phone-details" href=""></a></p>
+              <p>Gender: <span class="user-gender-details"></span></p>
+              <p>Address: <span class="user-address-details"></span></p>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="my-btn" data-dismiss="modal">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Spiner -->
+    <div id="spinner" class="spinner">
+      <div class="spinner-icon"></div>
+    </div>
+
+    <div id="success-message" class="alert alert-success" role="alert">
+      The request was successful!
+    </div>
+
+    <div id="error-message" class="alert alert-danger" role="alert">
+      An error occurred while processing the request!
+    </div>
+  </body>
+</html>
